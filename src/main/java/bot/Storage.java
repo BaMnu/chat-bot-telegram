@@ -24,16 +24,12 @@ public class Storage {
 
     for (
         String oneLine : lines) {
-      if (oneLine != null) {
-
-        var random = new SecureRandom();
-
+          if (oneLine != null) {
+          var random = new SecureRandom();
           int randomIndex = random.nextInt(lines.size());
           var randomElement = lines.get(randomIndex);
           System.out.println(randomElement);
-      return;
-
-
+           return;
       }
 
     }
