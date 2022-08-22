@@ -1,16 +1,43 @@
 package bot;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.SecureRandom;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Storage {
 
+  public void printText() throws IOException {
+
+    BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
+    List<String> lines = new ArrayList<>();
+
+    String line = abc.readLine();
+
+    while (line != null) {
+      line = abc.readLine();
+      lines.add(line);
+    }
 
 
+    for (
+        String oneLine : lines) {
+      if (oneLine != null) {
 
-    rndComment();
+        var random = new SecureRandom();
+        for (int i = 0; i < 150; i++) {
+          int randomIndex = random.nextInt(lines.size());
+          var randomElement = lines.get(randomIndex);
+          System.out.println(randomElement);
+          return;
+        }
 
+      }
 
-  private static void rndComment() {
-    List<String> result = Files.readAllLines(Paths.get(".\\src\\predictions.txt"));
-
-    System.out.println(result.get(ThreadLocalRandom.current().nextInt(0, result.size()-1)));
+    }
+    abc.close();
   }
+
 }
