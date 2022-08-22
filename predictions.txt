@@ -1,31 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@KosNet75
-BaMnu /
-chat-bot-telegram
-Public
-
-Code
-Issues 1
-Pull requests
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-chat-bot-telegram/predictions.txt
-@BaMnu
-BaMnu Added txt file and logic to put it in ArrayList
-Latest commit 5bbd7c4 yesterday
-History
-1 contributor
-150 lines (150 sloc) 7.58 KB
 Романтическое настроение направит ваши мысли в другую сторону.
 Не стоит кормить басней соловья.
 Обратите внимание на старых друзей.
