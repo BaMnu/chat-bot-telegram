@@ -27,12 +27,12 @@ public class Storage {
       if (oneLine != null) {
 
         var random = new SecureRandom();
-        for (int i = 0; i < 150; i++) {
+
           int randomIndex = random.nextInt(lines.size());
           var randomElement = lines.get(randomIndex);
           System.out.println(randomElement);
-          return;
-        }
+      return;
+
 
       }
 
