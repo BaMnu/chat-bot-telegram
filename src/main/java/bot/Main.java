@@ -10,7 +10,7 @@ public class Main {
 
         Storage text = new Storage();
         try {
-            text.printText();
+            text.rndComment();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
