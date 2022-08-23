@@ -2,6 +2,7 @@ package bot;
 
 import java.util.Random;
 
+
 public class BattleShip {
 //
 //
