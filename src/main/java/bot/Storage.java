@@ -1,11 +1,8 @@
 package bot;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.SecureRandom;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
+
 
 public class Storage {
 
@@ -21,19 +18,15 @@ public class Storage {
       lines.add(line);
     }
 
+    System.out.println(rndLine(lines));
 
-    for (
-        String oneLine : lines) {
-          if (oneLine != null) {
-          var random = new SecureRandom();
-          int randomIndex = random.nextInt(lines.size());
-          var randomElement = lines.get(randomIndex);
-          System.out.println(randomElement);
-           return;
-      }
-
-    }
     abc.close();
+    }
+
+  private String rndLine(List<String> lines) {
+    Random rnd = new Random();
+    return lines.get(rnd.nextInt(lines.size()));
   }
 
 }
+
