@@ -1,16 +1,14 @@
 package bot;
 
     import java.io.*;
-    import java.nio.file.Files;
-    import java.nio.file.Paths;
     import java.util.*;
 
 public class Storage {
-
+  List<String> lines;
   public void printText() throws IOException {
 
     BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
-    List<String> lines = new ArrayList<>();
+    lines = new ArrayList<>();
 
     String line = abc.readLine();
 
@@ -18,12 +16,10 @@ public class Storage {
       line = abc.readLine();
       lines.add(line);
     }
-    String randomLine = rndLine(lines);
-    System.out.println(randomLine);
 
     abc.close();
   }
-  private String rndLine(List<String> lines) {
+  protected String rndLine() {
     Random rnd = new Random();
     return lines.get(rnd.nextInt(lines.size()));
   }

@@ -1,18 +1,18 @@
 package bot;
 
-import com.google.common.base.Utf8;
-
-import java.io.*;
-import java.util.*;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Main {
     public static void main(String[] args) {
 
         Storage text = new Storage();
         try {
-            text.printText();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            TelegramBotsApi tba = new TelegramBotsApi(DefaultBotSession.class);
+            tba.registerBot(new Bot());
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
         }
     }
 }
