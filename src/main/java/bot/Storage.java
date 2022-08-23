@@ -18,19 +18,17 @@ public class Storage {
       lines.add(line);
     }
 
+    String randomLine = rndLine(lines);
+    System.out.println(randomLine);
 
-     String randomLine = rndLine(lines);
-      System.out.println(randomLine);
-
-      abc.close();
-
-
+    abc.close();
 
   }
-    private String rndLine (List < String > lines) {
-      Random rnd = new Random();
-      return lines.get(rnd.nextInt(lines.size()));
-    }
+
+  private String rndLine(List<String> lines) {
+    Random rnd = new Random();
+    return lines.get(rnd.nextInt(lines.size()));
+  }
 
 }
 
