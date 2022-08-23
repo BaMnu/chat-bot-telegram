@@ -22,7 +22,6 @@ public class Storage {
     System.out.println(randomLine);
 
     abc.close();
-
   }
 
   private String rndLine(List<String> lines) {
