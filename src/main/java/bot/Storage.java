@@ -1,40 +1,30 @@
 package bot;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
+    import java.io.*;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
+    import java.util.*;
 
 public class Storage {
 
-    public void printText() throws IOException {
+  public void printText() throws IOException {
 
-        BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
-        List<String> lines = new ArrayList<>();
+    BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
+    List<String> lines = new ArrayList<>();
 
-        String line = abc.readLine();
+    String line = abc.readLine();
 
-        while (line != null) {
-            line = abc.readLine();
-            lines.add(line);
-        }
-        for (
-                String oneLine : lines) {
-            if (oneLine != null) {
-                System.out.println(oneLine);
-            }
-        }
-        abc.close();
+    while (line != null) {
+      line = abc.readLine();
+      lines.add(line);
     }
+    String randomLine = rndLine(lines);
+    System.out.println(randomLine);
 
-    protected void rndComment() throws IOException {
-        List<String> result = Files.readAllLines(Paths.get(".\\src\\predictions.txt"));
-
-        System.out.println(result.get(ThreadLocalRandom.current().nextInt(0, result.size()-1)));
-    }
+    abc.close();
+  }
+  private String rndLine(List<String> lines) {
+    Random rnd = new Random();
+    return lines.get(rnd.nextInt(lines.size()));
+  }
 }
-
-
-
-
