@@ -1,8 +1,9 @@
 package bot;
 
-import java.io.*;
-import java.util.*;
-
+    import java.io.*;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
+    import java.util.*;
 
 public class Storage {
 
@@ -17,17 +18,13 @@ public class Storage {
       line = abc.readLine();
       lines.add(line);
     }
-
     String randomLine = rndLine(lines);
     System.out.println(randomLine);
 
     abc.close();
   }
-
   private String rndLine(List<String> lines) {
     Random rnd = new Random();
     return lines.get(rnd.nextInt(lines.size()));
   }
-
 }
-
