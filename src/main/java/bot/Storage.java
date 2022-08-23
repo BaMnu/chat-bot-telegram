@@ -21,6 +21,7 @@ public class Storage {
     System.out.println(rndLine(lines));
 
     abc.close();
+
     }
 
   private String rndLine(List<String> lines) {
