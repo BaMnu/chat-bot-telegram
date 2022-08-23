@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
-    final private String botToken = "5691318627:AAH9GUzblXHU2aT7602Y992Rhdn9KY7RS0c";
+    final private String botToken = "РІСЃС‚Р°РІСЊ С‚РѕРєРµРЅ ;)";
     final private String botName = "JapanMotherBot";
     Storage storage;
 
@@ -46,11 +46,11 @@ public class Bot extends TelegramLongPollingBot {
     public String checkMessage(String textMessage) {
         String answer;
         if (textMessage.equals("/start")) {
-            answer = "Здравствуй странник. Введи /get если желаешь получить предсказание";
+            answer = "Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР°РїРµС‡Р°С‚Р°Р№С‚Рµ /get , С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ РїСЂРµРґСЃРєР°Р·Р°РЅРёРµ.";
         } else if (textMessage.equals("/get")) {
             answer = storage.rndLine();
         } else {
-            answer = "Твое послание не распознано.";
+            answer = "РўРµРєСЃС‚ РЅРµ СЂР°СЃРїРѕР·РЅР°РЅ.";
         }
         return answer;
     }
