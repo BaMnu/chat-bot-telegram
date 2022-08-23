@@ -1,6 +1,5 @@
 package bot;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class BattleShip {
@@ -13,83 +12,71 @@ public class BattleShip {
     int[][] field = new int[SIZE][SIZE];
     int[][] ship = new int[SIZE][SIZE];
 
-    fillPlayerField(ship);
-
-
+    playerField(ship);
   }
-  private static void fillPlayerField(int[][] ship) {
 
-    int[][] shipTypeAmount = {{1, 4}, {2, 3}, {3, 2}, {4, 1}};
-    for ( i=0;i<shipTypeAmount.length; i++){
+  public static void playerField(int[][] ship) {
+
+    int[][] shipTall = {{1, 4}, {2, 3}, {3, 2}, {4, 1}};
+
+    Random rnd = new Random();
+
+    int j;
+
+    for (j = 0; j < shipTall.length; j++) {
+      int i = shipTall[j][1]; //величина корабля в клетках
+      int e = shipTall[j][0];  //количество кораблей
+      System.out.println(j + "   длинна i= " + i + "   количество e=" + e);
+
+      Integer[] shipOrientation = {1, 2}; //1 вертикально, 2 горизонтально
+      int rndSize = shipOrientation[rnd.nextInt(shipOrientation.length)];
+      int x = rnd.nextInt(10);
+      ; //горизонталь
+      int y = rnd.nextInt(10);
+      ; //вертикаль
+
+      if (rndSize == 1 & i != 1) {
+        x = shipTall.length - i;
+      } else if (rndSize == 2 & i != 1) {
+        y = shipTall.length - i;
+      }
+
+
+      for (e = 0; e <= j; e++) {
+
+        if (rndSize == 1) {
+          // заполняем '1' столько клеток по горизонтали, сколько палуб у корабля
+          for (int q = 0; q < i; q++) {
+            ship[y][x + q] = 1;
+
+          }
+        }
+
+        if (rndSize == 2) {
+          // заполняем столько клеток по вертикали, сколько палуб у корабля
+          for (int m = 0; m < i; m++) {
+            ship[y + m][x] = 1;
+
+          }
+        }
+      }
+
+
     }
+    printResult(ship);
+  }
 
-
+  public static void printResult(int[][] field) {
+    for (int[] row : field) {
+      for (int cell : row) {
+        System.out.print(cell + " ");
+      }
+      System.out.println();
+    }
   }
 }
 
 
-//        int[][] ship = {{1, 4}, {0, 1}, {4, 2}, {4, 3}, {4, 3}, {0, 1}, {0, 2}, {4, 3}};
-//    System.out.println(Arrays.toString(field));
-////        int[][] result = shipLogic(field, ship);
-////        printResult(result);
-//    int[][] result = shipLogic(field, ship);
-//      }
-//
-//
-////      //shotLogic
-//      public static int[][] shipLogic(int[][] field, int[][] ship) {
-////
-////    // ����� �������
-//        int shipSize = 4;
-//        Integer[] shipOrientation = {1, 2, 1, 2}; //1 �����������, 2 �������������
-//        Random rnd = new Random();
-//        Integer rndTicket = shipOrientation[rnd.nextInt(shipOrientation.length)];
-//       if(rndTicket == 2){
-////
-////          // ���������� ������� ������ ������� ���� �����������(4 ������ �� ����)
-////
-//    }
-//        System.out.println(rndTicket);
-//        System.out.println(Arrays.toString(field));
-//
-//
-//        for (int[] row : ship) {
-//          int a = row[0];
-//          int b = row[1];
-//          if (field[a][b] == 0) {
-//            field[a][b]++;
-//          } else {
-//            field[a][b] = field[a][b] * 2;
-//          }
-//        }
-//        return field;
-//      }
-////
-////
-////  public static int[][] shotLogic(int[][] field, int[][] ship) {
-////    for (int[] row : ship) {
-////      int a = row[0];
-////      int b = row[1];
-////      if (field[a][b] == 0) {
-////        field[a][b]++;
-////      } else {
-////        field[a][b] = field[a][b] * 2;
-////      }
-////    }
-// //   return field;
-// // }
-//
-//
-//
-//      public static void printResult(int[][] field) {
-//        for (int[] row : field) {
-//          for (int cell : row) {
-//            System.out.print(cell + " ");
-//          }
-//          System.out.println();
-//        }
-//      }
-//  }
 
 
 
