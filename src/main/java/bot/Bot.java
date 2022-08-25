@@ -7,8 +7,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
-    final private String botToken = "вставь токен ;)";
-    final private String botName = "JapanMotherBot";
     Storage storage;
 
     Bot() {
@@ -16,12 +14,12 @@ public class Bot extends TelegramLongPollingBot {
     }
     @Override
     public String getBotUsername() {
-        return botName;
+        return "JapanMotherBot";
     }
 
     @Override
     public String getBotToken() {
-        return botToken;
+        return "5691318627:AAH9GUzblXHU2aT7602Y992Rhdn9KY7RS0c";
     }
 
     @Override

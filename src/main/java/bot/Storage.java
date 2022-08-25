@@ -1,26 +1,26 @@
 package bot;
 
-    import java.io.*;
-    import java.util.*;
+import java.io.*;
+import java.util.*;
 
 public class Storage {
-  List<String> lines;
-  public void printText() throws IOException {
+    List<String> lines = new ArrayList<>();
 
-    BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
-    lines = new ArrayList<>();
+    public void printText() throws IOException {
 
-    String line = abc.readLine();
+        BufferedReader abc = new BufferedReader(new FileReader("predictions.txt"));
+        lines = new ArrayList<>();
 
-    while (line != null) {
-      line = abc.readLine();
-      lines.add(line);
+        String line = abc.readLine();
+            lines.add(line);
+
+        abc.close();
     }
 
-    abc.close();
-  }
-  protected String rndLine() {
-    Random rnd = new Random();
-    return lines.get(rnd.nextInt(lines.size()));
-  }
+    protected String rndLine() {
+        Random rnd = new Random();
+
+
+        return lines.get(rnd.nextInt(lines.size()));
+    }
 }
