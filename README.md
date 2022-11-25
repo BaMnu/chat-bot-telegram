@@ -4,14 +4,11 @@ Chat bot message generator
 </p>
 </h1>
 
-
-
-<h3>
+<h2>
 <p style="color:MediumSeaGreen;" align="center">
 The bot that writes random predictions with lovely advice
 </p>
-</h3>
-
+</h2>
 
 > ***With this super simple bot for Telegram you can easily create 
 > your own prediction generator like here in this example or maybe
