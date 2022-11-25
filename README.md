@@ -1,14 +1,29 @@
-# Chatbot message generator
-### The bot that writes random predictions with lovely advice
+<h1 style="border:2px solid MediumSeaGreen;">
+<p align="center">
+Chat bot message generator
+</p>
+</h1>
 
-> *With this super simple bot for Telegram you can easily create 
+
+
+<h3>
+<p style="color:MediumSeaGreen;" align="center">
+The bot that writes random predictions with lovely advice
+</p>
+</h3>
+
+
+> ***With this super simple bot for Telegram you can easily create 
 > your own prediction generator like here in this example or maybe
 > you need fact generator (it can be facts about your product or some 
 > thematic facts, etc.). The use cases for a bot can be completely 
 > different, whether for work (facts about your product or service) 
-> or just for fun.*
+> or just for fun.***
 
+<p style="background-color:MediumSeaGreen; color:Yellow;" align="center">
 Here's an example of the bot in action:
+</p>
+
 
 ![image](BotInAction.JPG)
 
